@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ich liebe dich Aliyha</title>
+    <style>
+        /* Allgemeines Styling */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Popup-Stil */
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .popup h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .popup p {
+            font-size: 0.8em;
+            color: #555;
+            margin-bottom: 10px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .popup .small-text {
+            font-size: 0.7em;
+            color: #777;
+            text-align: justify;
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        .popup button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup button:hover {
+            background-color: darkred;
+        }
+
+        /* Herz-Animation */
+        .heart-container {
+            display: none; /* Versteckt zunächst die Herz-Animation */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .heart {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+            margin: 0 auto; /* Zentriert das Herz horizontal */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -60px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: 60px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+        }
+
+        .message {
+            margin-top: 40px; /* Text weiter unterhalb des Herzens */
+            font-size: 2.5em;
+            color: red;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Optimierung für Handys */
+        @media (max-width: 600px) {
+            .heart {
+                width: 80px;
+                height: 80px;
+            }
+
+            .heart::before,
+            .heart::after {
+                width: 80px;
+                height: 80px;
+            }
+
+            .heart::before {
+                top: -40px;
+            }
+
+            .heart::after {
+                left: 40px;
+            }
+
+            .message {
+                font-size: 2em; /* Kleinere Schriftgröße für Handys */
+                margin-top: 30px; /* Weniger Abstand für Handys */
+            }
+
+            .popup {
+                padding: 15px;
+            }
+
+            .popup h1 {
+                font-size: 1.3em;
+            }
+
+            .popup p {
+                font-size: 0.7em;
+            }
+
+            .popup .small-text {
+                font-size: 0.6em;
+            }
+
+            .popup button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup mit "AGBs" -->
+    <div class="popup" id="popup">
+        <h1>Hiermit bestätige ich...</h1>
+        <p>...dass ich dich für immer liebe und immer für dich da sein werde. ❤️</p>
+        <div class="small-text">
+            <p><strong>Allgemeine Geschäftsbedingungen (AGB) für die ewige Liebe:</strong></p>
+            <p>
+                Mit dem Klicken auf "Ja" erklärt Aliyha sich unwiderruflich damit einverstanden, Maurice für immer zu lieben. Diese Liebe ist bindend und kann nicht storniert, zurückgegeben oder umgetauscht werden. Aliyha verpflichtet sich:
+            </p>
+            <ul>
+                <li>Maurice immer zu lieben, egal was passiert.</li>
+                <li>Maurice niemals zu verletzen, weder mit Worten noch mit Taten.</li>
+            </ul>
+            <p>
+                <strong>Haftungsausschluss:</strong> Die Liebe zu Maurice ist unbegrenzt und unterliegt keinen Garantien oder Rückgaberechten. Sollte Aliyha dennoch versuchen, diese Liebe zu kündigen, behält sich Maurice das Recht vor, ihr Herz für immer zu behalten.
+            </p>
+            <p>
+                <strong>Schlussbestimmungen:</strong> Diese AGB treten sofort in Kraft und gelten für die Ewigkeit. Durch das Klicken auf "Ja" bestätigt Aliyha, dass sie diese Bedingungen vollständig gelesen, verstanden und akzeptiert hat.
+            </p>
+        </div>
+        <button onclick="showHeart()">Ja</button>
+        <button onclick="showHeart()">Ja</button>
+    </div>
+
+    <!-- Herz-Animation und Text -->
+    <div class="heart-container" id="heartContainer">
+        <div class="heart"></div>
+        <div class="message">Ich liebe dich für immer ❤️</div>
+    </div>
+
+    <script>
+        // Funktion, um das Popup zu verstecken und die Herz-Animation anzuzeigen
+        function showHeart() {
+            document.getElementById('popup').style.display = 'none'; // Popup ausblenden
+            document.getElementById('heartContainer').style.display = 'block'; // Herz-Animation anzeigen
+        }
+    </script>
+</body>
+</html>
